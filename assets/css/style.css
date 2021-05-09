@@ -214,22 +214,18 @@ body{
 .msg_ricevuti{
   width: calc(70% / 2);
   padding: 17px;
-  margin-right: auto;
-  margin-top: 10px;
+  margin: 10px auto 0 70px;
   border-radius: 10px;
-  margin-left: 70px;
   background-color: white;
   position: relative;
 }
 
 .msg_inviati{
   width: calc(70% / 2);
-  margin-left: auto;
-  margin-top: 10px;
+  margin: 10px 70px 0 auto;
   padding: 17px;
-  padding-bottom: 18px;
+  padding-bottom: 19px;
   border-radius: 10px;
-  margin-right: 70px;
   background-color: #d5f9ba;
   position: relative;
 }
