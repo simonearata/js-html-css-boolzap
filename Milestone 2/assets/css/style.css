@@ -1,0 +1,283 @@
+/* generale */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+body{
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #249688 0%, #249688 18%, #dbdbd4 18%, #dbdbd4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+/* container */
+.container{
+  width: 80%;
+  min-width: 900px;
+  height: 90%;
+  background-color: white;
+}
+
+.container .left,
+.container .right{
+  float: left;
+}
+
+.container .left{
+  width: 35%;
+  height: 100%;
+}
+
+.nome_utente,
+.utente{
+  height: 60px;
+  background-color: #eaeaea;
+}
+
+/* COLONNA DI SINISTRA */
+
+/* nome utente */
+.nome_utente{
+  border-right: 1px solid #d8d8d8;
+  position: relative;
+}
+
+.nome_utente img{
+  width: 45px;
+  border-radius: 999px;
+  margin: 8px 9px;
+}
+
+.nome_utente p{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icons_utente{
+  float: right;
+  margin-top: 19px;
+  margin-right: 16px;
+}
+
+.icons_utente i{
+  padding: 0 7px;
+  color: #b1b1b1;
+}
+
+/* notifiche */
+.left .notifiche{
+  height: 70px;
+  background-color: #8edafc;
+}
+
+.notifiche i{
+  width: 40px;
+  margin-left: 10px;
+  background-color: white;
+  border-radius: 999px;
+  padding: 11px;
+  color: #8edafc;
+  vertical-align: super;
+}
+
+.notifiche .text{
+  display: inline-block;
+  margin-top: 17px;
+  margin-left: 4px;
+}
+
+.notifiche .text a{
+  font-size: 12px;
+  color: #578294;
+}
+
+/* cerca */
+.cerca{
+  height: 35px;
+  background-color: #fafafa;
+  text-align: center;
+  position: relative;
+}
+
+.cerca input{
+  width: 97%;
+  height: 26px;
+  margin-top: 4px;
+  border: none;
+  padding-left: 50px;
+}
+
+.cerca i{
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #b6b9bb;
+}
+
+/* contatti */
+.contatti{
+  height: calc(100% - 165px);
+  background-color: #fafafa;
+}
+
+.user{
+  width: 97%;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid lightgray;
+}
+
+.user .contatto{
+  border-bottom: 1px solid #f4f5f5;
+  height: 70px;
+}
+
+.user .contatto img{
+  width: 45px;
+  border-radius: 999px;
+  margin: 8px 9px;
+}
+
+.user .contatto p{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.hover{
+  background-color: #f4f5f5;
+}
+
+.hover2{
+  background-color: #f4f5f5;
+}
+
+/* COLONNA DI DESTRA */
+
+/* parte superiore */
+.container .right{
+  width: 65%;
+  height: 100%;
+}
+
+.utente{
+  position: relative;
+}
+
+.utente img{
+  width: 45px;
+  border-radius: 999px;
+  margin: 8px 9px;
+}
+
+.text_main{
+  display: inline-block;
+  vertical-align: 15px;
+}
+
+.text_main span{
+  font-size: 12px;
+  color: #747b7d;
+}
+
+.icons_main{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
+}
+
+.icons_main i{
+  padding: 0 8px;
+  color: #b1b1b1;
+}
+
+/* parte centrale */
+.right .centro{
+  height: calc(100% - 120px);
+}
+
+.right .conversazione{
+  background-image: url(../img/mine.jpg);
+  height: 100%;
+  padding-top: 50px;
+  overflow-y: scroll;
+}
+
+.msg_ricevuti{
+  max-width: calc(70% / 2);
+  padding: 17px;
+  margin: 10px auto 0 70px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+
+.msg_inviati{
+  width: calc(70% / 2);
+  margin: 10px 70px 0 auto;
+  padding: 17px;
+  padding-bottom: 19px;
+  border-radius: 10px;
+  background-color: #d5f9ba;
+  position: relative;
+}
+
+.msg_inviati span,
+.msg_ricevuti span{
+  font-size: 10px;
+  color: #bac2bb;
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+}
+
+.msg_inviati i,
+.msg_ricevuti i{
+  position: absolute;
+  right: 11px;
+  bottom: 22px;
+  color: #b6b9bb;
+  display: none;
+}
+
+.msg_ricevuti:hover i,
+.msg_inviati:hover i{
+  display: block;
+}
+
+/* parte inferiore */
+.right .down{
+  height: 60px;
+  background-color: #f3eeea;
+}
+
+.down .icons_text{
+  text-align: center;
+}
+
+.down .icons_text input{
+  width: 77%;
+  height: 42px;
+  border: none;
+  padding-left: 50px;
+  border-radius: 4px;
+  margin: 9px 27px;
+}
+
+.down .icons_text i{
+  font-size: 20px;
+  color: #6c7375;
+  vertical-align: middle;
+}

@@ -207,12 +207,12 @@ body{
 .right .conversazione{
   background-image: url(../img/mine.jpg);
   height: 100%;
-  margin-right: 10px;
   padding-top: 50px;
+  overflow-y: scroll;
 }
 
 .msg_ricevuti{
-  width: calc(70% / 2);
+  max-width: calc(70% / 2);
   padding: 17px;
   margin: 10px auto 0 70px;
   border-radius: 10px;
