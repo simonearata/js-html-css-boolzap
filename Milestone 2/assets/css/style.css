@@ -215,7 +215,7 @@ body{
   overflow-y: scroll;
 }
 
-.msg_ricevuti{
+.received{
   max-width: calc(70% / 2);
   padding: 17px;
   margin: 10px auto 0 70px;
@@ -224,7 +224,7 @@ body{
   position: relative;
 }
 
-.msg_inviati{
+.sent{
   width: calc(70% / 2);
   margin: 10px 70px 0 auto;
   padding: 17px;
@@ -234,8 +234,8 @@ body{
   position: relative;
 }
 
-.msg_inviati span,
-.msg_ricevuti span{
+.sent span,
+.received span{
   font-size: 10px;
   color: #bac2bb;
   position: absolute;
@@ -243,8 +243,8 @@ body{
   bottom: 4px;
 }
 
-.msg_inviati i,
-.msg_ricevuti i{
+.sent i,
+.received i{
   position: absolute;
   right: 11px;
   bottom: 22px;
@@ -252,8 +252,8 @@ body{
   display: none;
 }
 
-.msg_ricevuti:hover i,
-.msg_inviati:hover i{
+.received:hover i,
+.sent:hover i{
   display: block;
 }
 
