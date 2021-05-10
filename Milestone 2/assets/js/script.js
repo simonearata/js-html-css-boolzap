@@ -95,7 +95,7 @@ var app = new Vue({
       return `assets/img/avatar${avatar}.jpg`
     },
 
-    // selezioniamo utente
+    // selezioniamo utente attivo
     activeUser(index) {
       console.log('posizione cliccata', index)
       this.activeIndex = index;

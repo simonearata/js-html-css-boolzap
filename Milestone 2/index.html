@@ -85,15 +85,13 @@
 
       <!-- parte centrale -->
       <template
-        v-for="(contact, index) in contacts"
-        :class="index === activeIndex ? 'hover' : 'null'"
-        @click="selectUser(index)"
+        v-for="contact in contacts"
       
       >
         <div class="centro">
           <div class="conversazione">
             <div class="msg_inviati">
-              <p></p>
+              <p>{{contact.messages[0].text}}</p>
               <span>10/01/2020 15:30:55</span>
               <i class="fas fa-chevron-down"></i>
             </div>
