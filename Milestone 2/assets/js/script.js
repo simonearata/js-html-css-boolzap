@@ -1,6 +1,9 @@
 var app = new Vue({
   el: "#app",
   data: {
+    activeIndex: 0,
+    strDate:'',
+    strMessage: '',
     contacts: [
       {
         name: 'Michele',
@@ -86,7 +89,6 @@ var app = new Vue({
         ],
       },
     ],
-    activeIndex: 0
   },
 
   methods: {
@@ -99,7 +101,16 @@ var app = new Vue({
     activeUser(index) {
       console.log('posizione cliccata', index)
       this.activeIndex = index;
-    } 
+    },
+
+    // aggiungere le classi sent e received
+    addMessage(){
+      this.contacts.messages.push({
+        date:'11.09',
+        text: this.strMessage,
+        status: 'sent'
+      })
+    }
   }
 
 })
