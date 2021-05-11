@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <title>Boolzap</title>
+</head>
+<body>
+  
+  <!-- contenitore -->
+  <div id="app" class="container">
+
+    <!-- COLONNA SINISTRA -->
+    <aside class="left">
+      
+      <!-- nome utente -->
+      <div class="nome_utente">
+        <img src="assets/img/avatar_io.jpg" alt="immagine io">
+        <p>Nome Utente</p>
+        <div class="icons_utente">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <!-- notifiche -->
+      <div class="notifiche">
+        <i class="fas fa-bell-slash"></i>
+        <div class="text">
+          <p>Ricevi notifiche di nuovi messaggi</p>
+          <a href="#">Attiva notifiche desktop</a>
+        </div>
+      </div>
+
+      <!-- cerca -->
+      <div class="cerca">
+        <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
+        <i class="fas fa-search"></i>
+      </div>
+
+      <!-- contatti -->
+      <div class="contatti">
+        <div class="user">
+          <div 
+            class="contatto"
+            v-for="(contact, index) in contacts"
+            @mouseover="contact.visible = false"
+            @mouseout="contact.visible = true"
+            :class="{'hover': contact.visible === false, 'hover2': index === activeIndex}"
+            @click="activeUser(index)"
+          >
+            <img :src="avatarImg(contact.avatar)">
+            <!-- <img :src="'assets/img/' + 'avatar' + contact.avatar +'.jpg'" alt=""> -->
+            <p>{{contact.name}}</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLONNA DI DESTRA -->
+    <main class="right">
+      
+      <!-- parte superiore -->
+      <div class="utente">
+        <img src="assets/img/avatar_1.jpg" alt="avatar 1">
+        <div class="text_main">
+          <p>Michele</p>
+          <span>Ultimo accesso oggi alle</span>
+        </div>
+        <div class="icons_main">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <!-- parte centrale -->
+   
+      <div class="centro">
+        <div class="conversazione">
+          <div  
+            v-for="(message, index) in contacts[activeIndex].messages"
+            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
+          >
+            <p>{{message.text}}</p>
+            <span>{{message.date}}</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- parte inferiore -->
+      <footer class="down">
+        <div class="icons_text">
+          <i class="far fa-smile"></i>
+          <input type="text" name="" id="" placeholder=""
+            v-model="strMessage"
+            @keyup.enter="addMessage"
+          >
+          <i class="fas fa-microphone"></i>
+        </div>
+      </footer>
+    </main>
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
