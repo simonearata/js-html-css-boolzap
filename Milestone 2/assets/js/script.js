@@ -4,6 +4,7 @@ var app = new Vue({
     activeIndex: 0,
     strDate:'',
     strMessage: '',
+    now: dayjs().format('DD-MM-YY HH:mm:ss'),
     contacts: [
       {
         name: 'Michele',
@@ -105,12 +106,22 @@ var app = new Vue({
 
     // aggiungere le classi sent e received
     addMessage(){
-      this.contacts.messages.push({
-        date:'11.09',
+      this.contacts[this.activeIndex].messages.push({
+        date: this.now,
         text: this.strMessage,
         status: 'sent'
       })
+      this.strMessage = ""
+      setTimeout(()=>{
+        this.contacts[this.activeIndex].messages.push({
+          date: this.now,
+          text: "ok",
+          status: 'received'
+        })
+      },1000)
     }
+
+    
   }
 
 })
