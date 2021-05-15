@@ -1,9 +1,14 @@
 var app = new Vue({
   el: "#app",
   data: {
+    user:{
+      name: 'Nome utente',
+      avatar: '_io'
+    },
     activeIndex: 0,
     strDate:'',
     strMessage: '',
+    strUser: '',
     now: dayjs().format('DD-MM-YY HH:mm:ss'),
     contacts: [
       {
@@ -104,25 +109,49 @@ var app = new Vue({
       this.activeIndex = index;
     },
 
-    // aggiungere le classi sent e received
+    // aggiungo il messaggio alla conversazione
     addMessage(){
+      if(this.strMessage.length > 0){
+        this.pushMessage(this.strMessage, 'sent');
+        this.strMessage = ""
+
+        setTimeout(() =>{
+          this.pushMessage('ok', 'received')
+        }, 1000)
+      }
+    },
+
+    // funzione che mi pusha il messaggio all'interno dell'array
+    pushMessage(text, status){
       this.contacts[this.activeIndex].messages.push({
         date: this.now,
-        text: this.strMessage,
-        status: 'sent'
+        text: text,
+        status: status
+      });
+    },
+
+    // cercare utente nell'input
+    searchUser(){
+      this.contacts.forEach((contact)=>{
+        if(contact.name.toLowerCase().includes(this.strUser.toLowerCase())){
+          contact.visible = true;
+        }else{
+          contact.visible = false;
+        }
       })
-      this.strMessage = ""
-      setTimeout(()=>{
-        this.contacts[this.activeIndex].messages.push({
-          date: this.now,
-          text: "ok",
-          status: 'received'
-        })
-      },1000)
+    },
+
+    // funzione per determinare l'ultimo accesso
+    ultimoAccesso(index){
+      let messaggioUser = this.contacts[index].messages;
+      return messaggioUser[messaggioUser.length-1].date
+    },
+
+    ultimoMessaggio(index){
+      let strUltimo = this.contacts[index].messages;
+      return strUltimo[strUltimo.length-1].text
     }
 
-    
-  }
-
+  } 
 })
 

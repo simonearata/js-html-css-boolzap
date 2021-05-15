@@ -2,7 +2,6 @@ var app = new Vue({
   el: "#app",
   data: {
     activeIndex: 0,
-    strUser: '',
     strDate:'',
     strMessage: '',
     now: dayjs().format('DD-MM-YY HH:mm:ss'),
@@ -121,15 +120,6 @@ var app = new Vue({
         })
       },1000)
     },
-
-    // ricercare utente
-    searchUser(){
-      let word = this.strUser.split('')
-      if(word.includes(contacts.name.split()))
-      return contacts.name 
-    }
-
-    
   }
 
 })

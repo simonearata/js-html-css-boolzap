@@ -154,7 +154,7 @@ body{
   margin-top: 10px;
 }
 
-.hover{
+.contatto:hover{
   background-color: #f4f5f5;
 }
 
@@ -162,6 +162,17 @@ body{
   background-color: #f4f5f5;
 }
 
+#ultimoaccesso{
+  font-size: 12px;
+  float: right;
+  margin-top: 9px;
+  margin-right: 9px;
+  color: #bac2bb;
+}
+
+#ultimomessaggio{
+  
+}
 /* COLONNA DI DESTRA */
 
 /* parte superiore */
